@@ -8,7 +8,7 @@ var del         = require('del');
 var browserSync = require('browser-sync');
 
 var buildDir    = 'bin/';
-var javaScriptFiles     = ['js/general/app.js'];
+var javaScriptFiles     = ['js/general/*.js'];
 
 
 gulp.task('default', function ()
@@ -48,5 +48,3 @@ gulp.task('startBrowser', function ()
         }
     })
 });
-
-
