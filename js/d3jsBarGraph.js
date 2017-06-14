@@ -3,20 +3,20 @@ function barGraph() {
   const margin = {top: 20, right: 20, bottom: 100, left: 60};
   const width = 800 - margin.left - margin.right;
   const height = 500 - margin.top - margin.bottom;
-  const x = d3.scaleBand().rangeRound([0,width]).paddingInner(0.5);
-  const y = d3.scaleLinear().range([height,0]);
+  let x = d3.scaleBand().rangeRound([0,width]).paddingInner(0.5);
+  let y = d3.scaleLinear().range([height,0]);
 
   // draw axes
-  const xAxis = d3.axisBottom()
+  let xAxis = d3.axisBottom()
     .scale(x)
     .ticks(6);
 
-  const yAxis = d3.axisLeft()
+  let yAxis = d3.axisLeft()
     .scale(y)
     .ticks(5);
 
   // create svg element
-  const svg = d3.select("#barGraph")
+  let svg = d3.select("#barGraph")
     .append("svg")
     .attr("width", width + margin.left + margin.right)
     .attr("height", height + margin.top + margin.bottom)
@@ -47,8 +47,9 @@ function barGraph() {
 
     svg.append("g")
       .attr("class", "y axis")
-      .call(yAxis)
-      .append("text")
+      .call(yAxis);
+
+    svg.append("text")
       .attr("transform", "rotate(-90)")
       .attr("y", 5)
       .attr("dy", "0.8em")
