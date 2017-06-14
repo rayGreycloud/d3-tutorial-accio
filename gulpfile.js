@@ -44,7 +44,7 @@ gulp.task('sass', function ()
 gulp.task('watch', function ()
 {
   gulp.watch('js/general/*.js', ['scripts']);
-  gulp.watch('js/graph/*.js', ['scripts']);
+  gulp.watch('js/graph/*.js', ['graph']);
     // gulp.watch('js/**/*.js', ['scripts']);
     //gulp.watch('css/**/*.scss', ['sass']);
 });
