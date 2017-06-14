@@ -1,3 +1,12 @@
 svg {
   border: 1px solid #000;
 }
+
+.arc text {
+  font: 16px Arial, Georgia, sans-serif;
+  text-anchor: middle;
+}
+
+.arc path {
+  stroke: #ffffff;
+}
