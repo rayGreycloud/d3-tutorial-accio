@@ -9,6 +9,7 @@ var browserSync = require('browser-sync');
 
 var buildDir    = 'bin/';
 var javaScriptFiles     = ['js/general/*.js'];
+var graphJSFiles     = ['js/graph/*.js'];
 
 
 gulp.task('default', function ()
@@ -16,6 +17,12 @@ gulp.task('default', function ()
     return gulp.src(javaScriptFiles)
         .pipe(concat('js/d3jsTutorial.js'))
         .pipe(gulp.dest('./'));
+});
+
+gulp.task('graph', function () {
+  return gulp.src(graphJSFiles)
+    .pipe(concat('js/d3jsGraph.js'))
+    .pipe(gulp.dest('./'));
 });
 
 gulp.task('scripts', function ()
@@ -36,7 +43,9 @@ gulp.task('sass', function ()
 /** run watch **/
 gulp.task('watch', function ()
 {
-    gulp.watch('js/**/*.js', ['scripts']);
+  gulp.watch('js/general/*.js', ['scripts']);
+  gulp.watch('js/graph/*.js', ['scripts']);
+    // gulp.watch('js/**/*.js', ['scripts']);
     //gulp.watch('css/**/*.scss', ['sass']);
 });
 
